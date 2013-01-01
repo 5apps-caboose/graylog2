@@ -2,7 +2,7 @@ default.graylog2.basedir = "/var/graylog2"
 default.graylog2.server.version = "0.9.6p1"
 default.graylog2.web_interface.version = "0.9.6p1"
 
-default.graylog2.elasticsearch.version="0.19.2"
+default.graylog2.elasticsearch.version="0.20.2"
 
 default.graylog2.mongodb.host = "localhost"
 default.graylog2.mongodb.port = 27017
