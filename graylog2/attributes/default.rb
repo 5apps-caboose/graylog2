@@ -5,6 +5,7 @@ default.graylog2.web_interface.version = "0.10.0-rc.1"
 default.graylog2.elasticsearch.version="0.20.2"
 
 default.graylog2.port = 514
+default.graylog2.listen_address = '127.0.0.1'
 
 default.graylog2.mongodb.host = "localhost"
 default.graylog2.mongodb.port = 27017
