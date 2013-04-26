@@ -38,3 +38,9 @@ default.graylog2.stream_subscriptions_cron_minute = "*/15"
 
 default.graylog2.external_hostname = nil
 default.graylog2.server_name = "graylog2"
+
+default.graylog2.output_batch_size = 5000
+default.graylog2.processbuffer_processors = 5
+default.graylog2.outputbuffer_processors = 5
+default.graylog2.processor_wait_strategy = "sleeping"
+default.graylog2.ring_size = 1024
