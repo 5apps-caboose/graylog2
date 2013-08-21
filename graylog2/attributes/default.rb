@@ -1,6 +1,6 @@
 default.graylog2.basedir = "/var/graylog2"
-default.graylog2.server.version = "0.11.0"
-default.graylog2.web_interface.version = "0.11.0"
+default.graylog2.server.version = "0.12.0"
+default.graylog2.web_interface.version = "0.12.0"
 
 default.graylog2.elasticsearch.version="0.20.4"
 
