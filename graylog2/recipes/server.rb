@@ -69,6 +69,7 @@ end
 # Create graylog2.conf
 template "/etc/graylog2.conf" do
   mode 0644
+  notifies :restart, "service[graylog2]"
 end
 
 # Create graylog2-elasticsearch.yml
