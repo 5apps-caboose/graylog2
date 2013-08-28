@@ -155,10 +155,10 @@ enable_tokenizer_filter = true
 
 # Additional modules
 # Graphite
-#enable_graphite_output = false
-#graphite_carbon_host = 127.0.0.1
-#graphite_carbon_tcp_port = 2003
-#graphite_prefix = logs
+enable_graphite_output = <%= node.graylog2.enable_graphite_output %>
+graphite_carbon_host = <%= node.graylog2.graphite_carbon_host %>
+graphite_carbon_tcp_port = <%= node.graylog2.graphite_carbon_tcp_port %>
+graphite_prefix = <%= node.graylog2.graphite_prefix %>
 
 # Librato Metrics (https://github.com/Graylog2/graylog2-server/wiki/Librato-Metrics-output)
 #enable_libratometrics_output = false

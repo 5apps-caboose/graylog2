@@ -44,3 +44,8 @@ default.graylog2.processbuffer_processors = 5
 default.graylog2.outputbuffer_processors = 5
 default.graylog2.processor_wait_strategy = "sleeping"
 default.graylog2.ring_size = 1024
+
+default.graylog2.enable_graphite_output = false
+default.graylog2.graphite_carbon_host = "127.0.0.1"
+default.graylog2.graphite_carbon_tcp_port = 2003
+default.graylog2.graphite_prefix = "logs"
