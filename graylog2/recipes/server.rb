@@ -33,18 +33,26 @@ end
 # Download the elasticsearch dpkg
 
 remote_file "elasticsearch_dpkg" do
-    path "#{node['graylog2']['basedir']}/rel/elasticsearch-#{node['graylog2']['elasticsearch']['version']}.deb"
-    source "http://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-#{node['graylog2']['elasticsearch']['version']}.deb"
-    action :create_if_missing
+  path "#{node['graylog2']['basedir']}/rel/elasticsearch-#{node['graylog2']['elasticsearch']['version']}.deb"
+  source "http://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-#{node['graylog2']['elasticsearch']['version']}.deb"
+  action :create_if_missing
 end
 
 dpkg_package "elasticsearch" do
-    source "#{node['graylog2']['basedir']}/rel/elasticsearch-#{node['graylog2']['elasticsearch']['version']}.deb"
-    version node['graylog2']['elasticsearch']['version']
-    action :install
+  source "#{node['graylog2']['basedir']}/rel/elasticsearch-#{node['graylog2']['elasticsearch']['version']}.deb"
+  version node['graylog2']['elasticsearch']['version']
+  action :install
 end
 
 template "/etc/elasticsearch/elasticsearch.yml" do
+  mode 0644
+  variables :network_host => node['graylog2']['elasticsearch']['network']['host']
+  notifies :restart, "service[elasticsearch]"
+end
+
+template "/etc/default/elasticsearch" do
+  source "elasticsearch_default.erb"
+  variables :heap_size => node['graylog2']['elasticsearch']['heap_size']
   mode 0644
   notifies :restart, "service[elasticsearch]"
 end
@@ -72,6 +80,7 @@ end
 # Create graylog2.conf
 template "/etc/graylog2.conf" do
   mode 0644
+  variables :elasticsearch_network_host => node['graylog2']['elasticsearch']['network']['host']
   notifies :restart, "service[graylog2]"
 end
 

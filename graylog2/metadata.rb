@@ -2,8 +2,8 @@ maintainer        'Medidata Solutions Inc.'
 maintainer_email  'cloudteam@mdsol.com'
 license           'Apache 2.0'
 description       'Installs and configures Graylog2'
-version           '0.1.0'
 name              'graylog2'
+version           '0.2.0'
 recipe            'graylog2', 'Installs and configures Graylog2'
 
 # Only supporting Ubuntu 10.x

@@ -4,6 +4,8 @@ node.default['graylog2']['web_interface']['version'] = '0.20.1'
 
 node.default['graylog2']['elasticsearch']['version'] = '0.90.10'
 node.default['graylog2']['elasticsearch']['max_number_of_indices'] = 20
+node.default['graylog2']['elasticsearch']['network']['host'] = '127.0.0.1'
+node.default['graylog2']['elasticsearch']['heap_size'] = nil
 
 node.default['graylog2']['port'] = 514
 # Override to '0.0.0.0' in a policy cookbook or a role to listen on all

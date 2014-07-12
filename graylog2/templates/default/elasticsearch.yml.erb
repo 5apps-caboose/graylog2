@@ -207,7 +207,9 @@ cluster.name: graylog2
 
 # Set both 'bind_host' and 'publish_host':
 #
-# network.host: 192.168.0.1
+<% if @network_host -%>
+network.host: <%= @network_host %>
+<% end -%>
 
 # Set a custom port for the node to node communication (9300 by default):
 #
