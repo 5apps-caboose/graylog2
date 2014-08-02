@@ -63,7 +63,7 @@ elasticsearch_max_number_of_indices = <%= node['graylog2']['elasticsearch']['max
 # The following strategies are availble:
 #   - delete # Deletes the index completely (Default)
 #   - close # Closes the index and hides it from the system. Can be re-opened later.
-retention_strategy = delete
+retention_strategy = <%= node['graylog2']['retention_strategy'] %>
 
 # How many ElasticSearch shards and replicas should be used per index? Note that this only applies to newly created indices.
 elasticsearch_shards = 4

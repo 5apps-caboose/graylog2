@@ -42,6 +42,7 @@ node.default['graylog2']['send_stream_alarms'] = true
 node.default['graylog2']['send_stream_subscriptions'] = true
 node.default['graylog2']['stream_alarms_cron_minute'] = '*/15'
 node.default['graylog2']['stream_subscriptions_cron_minute'] = '*/15'
+node.default['graylog2']['retention_strategy'] = 'delete'
 
 node.default['graylog2']['external_hostname'] = nil
 node.default['graylog2']['server_name'] = 'graylog2'
