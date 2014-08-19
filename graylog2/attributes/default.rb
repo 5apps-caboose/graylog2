@@ -11,6 +11,7 @@ node.default['graylog2']['port'] = 514
 # Override to '0.0.0.0' in a policy cookbook or a role to listen on all
 # interfaces
 node.default['graylog2']['listen_address'] = '127.0.0.1'
+node.default['graylog2']['rest_listen_uri'] = 'http://127.0.0.1:12900/'
 # You must set a password_secret and root_password_sha2 in a recipe or role
 node.default['graylog2']['password_secret']    = nil
 node.default['graylog2']['root_password_sha2'] = nil
